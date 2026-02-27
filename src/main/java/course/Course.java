@@ -1,13 +1,29 @@
 package course;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+//Spring JPA 활용한 Entity 연동
+@Entity //table과과 클래스 명이 같으면 table 명 생략 가능
 public class Course {
+    @Id
     private int courseId;
+//마찬가지로 column 명이 변수 명과 같으면 column 명 생략 가능
+
+    // @Column(name = "title") 
     private String title;
+    // @Column(name = "instructor")
     private String instructor;
+    // @Column(name = "category")      
     private String category;
+    // @Column(name = "startAt")
     private String startAt;
+    // @Column(name = "endAt")
     private String endAt;
+    // @Column(name = "capacity")
     private int capacity;
+    // @Column(name = "enrolled")
     private int enrolled;
+    // @Column(name = "status")    //마찬가지로 column 명이 변수수 명과 같으면 column 명 생략 가능
     private String status;
     public Course() {
     }
