@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 import java.util.Arrays;
-import Enrollement.Enrollment;
+import entity.Enrollment;
 
 @RestController
 public class EnrollmentController {

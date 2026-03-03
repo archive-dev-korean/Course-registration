@@ -12,13 +12,13 @@
 //     private static String INSERT_COURSE_SQL = "insert into course (courseId, title, instructor, category, startAt, endAt, capacity, enrolled,status) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 //     // private static String DELETE_COURSE_SQL = "delete from course where courseId = ?";
 //     // private static Strign UPDATE_COURSE_SQL = "update course set title = ?, instructor = ?, category = ?, startAt = ?, endAt = ?, capacity = ?, enrolled = ?, status = ? where courseId = ?";
-//     // public void update(course.Course course) {
-//     //     springjdbcTemplate.update(UPDATE_COURSE_SQL, course.getCourseId(), course.getTitle(), course.getInstructor(), course.getCategory(), course.getStartAt(), course.getEndAt(), course.getCapacity(), course.getEnrolled(), course.getStatus());
+//     // public void update(entity.Course course) {
+//     //     springjdbcTemplate.update(UPDATE_COURSE_SQL, course.getCourseId(), course.getTitle(), ...);
 //     // }
 //     public void createTable() {
 //         springjdbcTemplate.update(CREATE_COURSE_SQL);
 //     }
-//     public void insert(course.Course course) {
+//     public void insert(entity.Course course) {
 //         springjdbcTemplate.update(INSERT_COURSE_SQL, course.getCourseId(), course.getTitle(), course.getInstructor(), course.getCategory(), course.getStartAt(), course.getEndAt(), course.getCapacity(), course.getEnrolled(), course.getStatus());
 //     }
 //     // public void delete(int courseId) {
