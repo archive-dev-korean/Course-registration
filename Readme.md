@@ -206,6 +206,6 @@ Enrollment 객체 예시
     **DevOps**
     
     - CI → github Actions
-        - 또는 JenkinsCI(선택)
-    - Docker Compose(Postgres+Redis) → CD 대체인데 CI/CD 해보고 싶음
+        ~~- 또는 JenkinsCI(선택)~~
+    - Docker Compose(Postgres+Redis) → ~~CD 대체인데 CI/CD 해보고 싶음~~ 보류
   
