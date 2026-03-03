@@ -25,4 +25,9 @@ public class CourseService {
         Course course = courseJpaRepository.findById(courseId);
         return course == null ? 0 : course.getCapacity();
     }
+
+    /** POST 요청으로 받은 강의를 DB에 저장 */
+    public Course save(Course course) {
+        return courseJpaRepository.create(course);
+    }
 }

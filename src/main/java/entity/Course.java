@@ -3,9 +3,11 @@ package entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity //table과과 클래스 명이 같으면 table 명 생략 가능
 @Getter
+@Setter //POST 요청으로 받은 강의를 DB에 저장할 때 사용
 public class Course {
 
     @Id
