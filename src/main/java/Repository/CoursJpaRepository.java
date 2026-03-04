@@ -26,6 +26,17 @@ public class CoursJpaRepository {
     public List<Course> findAll() {
         return entityManager.createQuery("SELECT c FROM Course c", Course.class).getResultList();
     }
+
+    /** status가 null이면 전체, 아니면 해당 status인 강의만 조회 (DB에 status는 String 저장) */
+    public List<Course> findAllByStatus(String status) {
+        if (status == null || status.isBlank()) {
+            return findAll();
+        }
+        return entityManager
+                .createQuery("SELECT c FROM Course c WHERE c.status = :status", Course.class)
+                .setParameter("status", status)
+                .getResultList();
+    }
     //Delete
     // public void deleteById(int id){
     //     Course course = entityManager.find(Course.class, id);

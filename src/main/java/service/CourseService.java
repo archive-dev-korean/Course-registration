@@ -17,6 +17,11 @@ public class CourseService {
         return courseJpaRepository.findAll();
     }
 
+    /** status가 null/빈값이면 전체 강의, 아니면 해당 status 강의만 (DB에 String으로 저장된 값 사용) */
+    public List<Course> findCoursesByStatus(String status) {
+        return courseJpaRepository.findAllByStatus(status);
+    }
+
     public Course findById(int courseId) {
         return courseJpaRepository.findById(courseId);
     }

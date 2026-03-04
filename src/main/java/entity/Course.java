@@ -4,10 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity //table과과 클래스 명이 같으면 table 명 생략 가능
 @Getter
 @Setter //POST 요청으로 받은 강의를 DB에 저장할 때 사용
+@ToString
 public class Course {
 
     @Id
@@ -43,20 +45,20 @@ public class Course {
         this.version = version;
     }
 
-    @Override
-    public String toString() {
-        return "Course{" +
-                "courseId=" + courseId +
-                ", title='" + title + '\'' +
-                ", instructor='" + instructor + '\'' +
-                ", category='" + category + '\'' +
-                ", startAt='" + startAt + '\'' +
-                ", endAt='" + endAt + '\'' +
-                ", capacity=" + capacity +
-                ", status='" + status + '\'' +
-                ", enrolledcount=" + enrolledcount +
-                ", version=" + version +
-                '}';
-    }
+    // @Override
+    // public String toString() {
+    //     return "Course{" +
+    //             "courseId=" + courseId +
+    //             ", title='" + title + '\'' +
+    //             ", instructor='" + instructor + '\'' +
+    //             ", category='" + category + '\'' +
+    //             ", startAt='" + startAt + '\'' +
+    //             ", endAt='" + endAt + '\'' +
+    //             ", capacity=" + capacity +
+    //             ", status='" + status + '\'' +
+    //             ", enrolledcount=" + enrolledcount +
+    //             ", version=" + version +
+    //             '}';
+    // }
 }
 
