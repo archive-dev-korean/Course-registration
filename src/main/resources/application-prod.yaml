@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo
+    username: root
+    password: root1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: demo
+  docker:
+    compose:
+      enabled: false
+logging:
+  level:
+    org.springframework.web: INFO 
