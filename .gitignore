@@ -38,3 +38,6 @@ out/
 
 ### Local clone (do not push) ###
 Course-registration/
+
+### Env (민감 정보) ###
+.env
