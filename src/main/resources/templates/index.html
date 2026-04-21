@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Index</h1>
+        <p>Welcome to the index page.</p>
+        <a th:href="@{/oauth2/authorization/naver}">Naver Login</a><br>
+        <a th:href="@{/oauth2/authorization/google}">Google Login</a><br>
+        <a th:href="@{/users}">로그인한 유저만 사용 가능</a><br>
+        <a th:href="@{/Admin}">관리자만 사용 가능</a><br>
+
+        <div th:if="${session.user != null}">
+            [[${session.user.email}]], [[${session.user.role}]] <a th:href="@{/logout}">Logout</a><br>
+        </div>
+    </body>
+</html>

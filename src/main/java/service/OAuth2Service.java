@@ -1,24 +1,23 @@
 package service;
 
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
-import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
-import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
-import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import jakarta.servlet.http.HttpSession;
-
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
+import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Service;
+
 import Repository.UserRepository;
-import entity.Users;
 import dto.Role;
+import entity.Users;
+import jakarta.servlet.http.HttpSession;
 
 @Service
 public class OAuth2Service implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
@@ -54,9 +53,9 @@ public class OAuth2Service implements OAuth2UserService<OAuth2UserRequest, OAuth
         Users user;
         Optional<Users> optionalUser = userRepository.findByEmail(email);
 
-        if (optionalUser.isPresent()) {
+        if (optionalUser.isPresent()) { // 이미 가입된 회원이 있는 경우우
             user = optionalUser.get();
-        } else {
+        } else { // 가입된 회원이 없는 경우
             user = new Users();
             user.setEmail(email);
             user.setRole(Role.USER);
